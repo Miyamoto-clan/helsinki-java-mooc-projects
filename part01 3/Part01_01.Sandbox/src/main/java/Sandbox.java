@@ -11,5 +11,12 @@ public class Sandbox {
 // %-5d = left-aligned
         System.out.printf("%-5d\n", 42);  // "42   "
 
+        // Scanner examples
+        Scanner scanner = new Scanner(System.in);
+        String text = scanner.nextLine();
+        int integer = Integer.valueOf(scanner.nextLine());
+        double floatingPoint = Double.valueOf(scanner.nextLine());
+        boolean trueOrFalse = Boolean.valueOf(scanner.nextLine());
+
     }
 }
