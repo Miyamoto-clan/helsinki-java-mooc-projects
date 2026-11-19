@@ -43,7 +43,7 @@ public class HiAdaLovelaceTest {
     public void systemOutPrintlnCommandDoesntContainAda() {
         List<String> code = code("HiAdaLovelace.java");
         int occurrences = countOccurrences(code, "System.out.println\\(.*Ada Lovelace.*\\)");
-        assertTrue("System.out.println-command snould not contain string \"Ada Lovelace\". Construct the output using the variable contained in the exercise template.", occurrences == 0);
+        assertEquals("System.out.println-command snould not contain string \"Ada Lovelace\". Construct the output using the variable contained in the exercise template.", 0, occurrences);
     }
 
     private List<String> rows(String out) {

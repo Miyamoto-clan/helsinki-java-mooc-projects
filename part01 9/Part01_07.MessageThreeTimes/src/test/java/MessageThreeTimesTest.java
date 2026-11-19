@@ -29,7 +29,7 @@ public class MessageThreeTimesTest {
     } 
 
     private void correctOutput(String input) {
-        io.setSysIn("" + input + "\n");
+        io.setSysIn(input + "\n");
         MessageThreeTimes.main(new String[]{});
         String[] lines = new String[]{"Write a message:", input, input, input};
 

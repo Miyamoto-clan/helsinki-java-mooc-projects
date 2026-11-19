@@ -7,6 +7,13 @@ public class SecondsInADay {
         Scanner scanner = new Scanner(System.in);
 
         // Write your program here
+        int hours = 24;
+        int minutes = 60;
+
+        System.out.println("How many days would you like to convert to seconds?");
+        int days = Integer.valueOf(scanner.nextLine());
+        int seconds = (days * hours * minutes * minutes);
+        System.out.println(seconds);
 
     }
 }

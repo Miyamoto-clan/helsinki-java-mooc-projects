@@ -41,7 +41,7 @@ public class ConversationTest {
     public void correctOrder() {
         List<String> code = code("Conversation.java");
         int count = countOccurrences(code, "System.out.println.*nextLine.*System.out.println.*nextLine.*System.out.println");
-        assertTrue("Implement the program so that reading and printing alternate.\\nFirst printing, then reading, then printing, etc...", count == 1);
+        assertEquals("Implement the program so that reading and printing alternate.\\nFirst printing, then reading, then printing, etc...", 1, count);
     }
 
     private List<String> rows(String out) {

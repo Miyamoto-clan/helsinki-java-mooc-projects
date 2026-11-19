@@ -39,7 +39,7 @@ public class LeapYearTest {
 
         assertTrue("The program had no output!", out.length() > 0);
         assertTrue("With input " + year + " output was \"" + out + "\" ", out.toLowerCase().contains("is a leap"));
-        assertTrue("With input " + year + " output was \"" + out + "\" ", !out.toLowerCase().contains("is not"));
+        assertFalse("With input " + year + " output was \"" + out + "\" ", out.toLowerCase().contains("is not"));
     }
 
     private void failsIncorrect(int year) {
@@ -49,7 +49,7 @@ public class LeapYearTest {
         String out = io.getSysOut().substring(oldOut);
 
         assertTrue("The program had no output!", out.length() > 0);
-        assertTrue("With input " + year + " output was \"" + out + "\" ", !out.toLowerCase().contains("is a leap"));
+        assertFalse("With input " + year + " output was \"" + out + "\" ", out.toLowerCase().contains("is a leap"));
         assertTrue("With input " + year + " output was \"" + out + "\" ", out.toLowerCase().contains("is not"));
     }
 
@@ -57,7 +57,7 @@ public class LeapYearTest {
         try {
             kl = ReflectionUtils.newInstanceOfClass(kl);
             String[] t = null;
-            String x[] = new String[0];
+            String[] x = new String[0];
             Method m = ReflectionUtils.requireMethod(kl, "main", x.getClass());
             ReflectionUtils.invokeMethod(Void.TYPE, m, null, (Object) x);
         } catch (Throwable e) {

@@ -3,10 +3,11 @@ import fi.helsinki.cs.tmc.edutestutils.MockStdio;
 import fi.helsinki.cs.tmc.edutestutils.Points;
 import fi.helsinki.cs.tmc.edutestutils.ReflectionUtils;
 import java.lang.reflect.Method;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+
 import org.junit.Rule;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 @Points("01-31")
 public class GradesAndPointsTest {
@@ -96,7 +97,7 @@ public class GradesAndPointsTest {
 
         assertTrue("The program did not print anything", out.length() > 0);
 
-        assertTrue("With " + points + " the grade should be " + grade + ", you printed: " + out, out.toLowerCase().contains("" + gradeShort));
+        assertTrue("With " + points + " the grade should be " + grade + ", you printed: " + out, out.toLowerCase().contains(gradeShort));
 
         String[] incorrect = {"imp", "inc", "acc", "fail", "5"};
         for (String incorrectGrade : incorrect) {
@@ -104,7 +105,7 @@ public class GradesAndPointsTest {
                 continue;
             }
 
-            assertTrue("With " + points + " the grade should be " + grade + ", you printed: " + out, !out.toLowerCase().contains("" + incorrectGrade));
+            assertFalse("With " + points + " the grade should be " + grade + ", you printed: " + out, out.toLowerCase().contains(incorrectGrade));
         }
     }
 
@@ -112,7 +113,7 @@ public class GradesAndPointsTest {
         try {
             kl = ReflectionUtils.newInstanceOfClass(kl);
             String[] t = null;
-            String x[] = new String[0];
+            String[] x = new String[0];
             Method m = ReflectionUtils.requireMethod(kl, "main", x.getClass());
             ReflectionUtils.invokeMethod(Void.TYPE, m, null, (Object) x);
         } catch (Throwable e) {

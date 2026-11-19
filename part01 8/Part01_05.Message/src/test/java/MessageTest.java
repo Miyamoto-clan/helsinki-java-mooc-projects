@@ -29,7 +29,7 @@ public class MessageTest {
     }
 
     private void correctOutput(String input) {
-        io.setSysIn("" + input + "\n");
+        io.setSysIn(input + "\n");
         Message.main(new String[]{});
         String[] lines = new String[]{"Write a message:", input};
 

@@ -56,7 +56,7 @@ public class AverageOfTwoNumbersTest {
     public void correctOrder() {
         List<String> code = code("AverageOfTwoNumbers.java");
         int count = countOccurrences(code, "System.out.println.*Integer.*System.out.println.*Integer.*System.out.println");
-        assertTrue("Implement the program so that reading and printing alternate.\nFirst printing, then reading, then printing, etc...", count == 1);
+        assertEquals("Implement the program so that reading and printing alternate.\nFirst printing, then reading, then printing, etc...", 1, count);
     }
 
     private List<String> rows(String out) {

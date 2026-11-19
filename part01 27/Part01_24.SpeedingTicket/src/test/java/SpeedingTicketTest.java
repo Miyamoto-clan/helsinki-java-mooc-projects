@@ -2,6 +2,8 @@
 import fi.helsinki.cs.tmc.edutestutils.MockStdio;
 import fi.helsinki.cs.tmc.edutestutils.Points;
 import fi.helsinki.cs.tmc.edutestutils.ReflectionUtils;
+
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Rule;
 import org.junit.Test;
@@ -41,9 +43,8 @@ public class SpeedingTicketTest {
                     + number + ", but it did not. Output was: " + out, 
                     out.contains("ticket"));
         } else {
-            assertTrue("Output should not contain the text \"Speeding ticket!\", when the given speed is "
-                    + number + ", but it did. Output was: " + out, 
-                    !out.contains("ticket"));
+            assertFalse("Output should not contain the text \"Speeding ticket!\", when the given speed is "
+                    + number + ", but it did. Output was: " + out, out.contains("ticket"));
         }
     }
 }

@@ -72,7 +72,7 @@ public class GiftTaxTest {
         try {
             kl = ReflectionUtils.newInstanceOfClass(kl);
             String[] t = null;
-            String x[] = new String[0];
+            String[] x = new String[0];
             Method m = ReflectionUtils.requireMethod(kl, "main", x.getClass());
             ReflectionUtils.invokeMethod(Void.TYPE, m, null, (Object) x);
         } catch (Throwable e) {

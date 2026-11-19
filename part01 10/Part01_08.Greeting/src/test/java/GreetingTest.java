@@ -29,7 +29,7 @@ public class GreetingTest {
     }
 
     private void correctOutput(String input) {
-        io.setSysIn("" + input + "\n");
+        io.setSysIn(input + "\n");
         Greeting.main(new String[]{});
         String[] lines = new String[]{"What's your name?", "Hi " + input};
 

@@ -2,6 +2,8 @@
 import fi.helsinki.cs.tmc.edutestutils.MockStdio;
 import fi.helsinki.cs.tmc.edutestutils.Points;
 import fi.helsinki.cs.tmc.edutestutils.ReflectionUtils;
+
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Rule;
 import org.junit.Test;
@@ -41,9 +43,8 @@ public class AncientTest {
                     + year + ", but it did not. Program output was " + out, 
                     out.contains("Ancient"));
         } else {
-            assertTrue("Program output should not contain  \"Ancient\" when user input is  "
-                    + year + ", but it did. Program output was: " + out, 
-                    !out.contains("Ancient"));
+            assertFalse("Program output should not contain  \"Ancient\" when user input is  "
+                    + year + ", but it did. Program output was: " + out, out.contains("Ancient"));
         }
     }
 }

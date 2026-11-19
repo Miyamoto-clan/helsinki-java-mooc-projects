@@ -35,7 +35,7 @@ public class MultiplicationFormulaTest {
         MultiplicationFormula.main(new String[]{});
         String[] lines = new String[]{"Give the first number:",
             "Give the second number:",
-            "" + first + " * " + second + " = " + (Integer.valueOf(first) * Integer.valueOf(second))
+            first + " * " + second + " = " + (Integer.valueOf(first) * Integer.valueOf(second))
         };
 
         List<String> rows = rows(io.getSysOut().trim());

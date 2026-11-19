@@ -2,6 +2,8 @@
 import fi.helsinki.cs.tmc.edutestutils.MockStdio;
 import fi.helsinki.cs.tmc.edutestutils.Points;
 import fi.helsinki.cs.tmc.edutestutils.ReflectionUtils;
+
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Rule;
 import org.junit.Test;
@@ -40,13 +42,11 @@ public class AdulthoodTest {
         if (age >= 18) {
             assertTrue(message + "Program output should contain \"are an adult\", but it did not. Output was: " + out,
                     out.contains("are an a"));
-            assertTrue(message + "Program output should not contain \"are not an adult\", but it did. Output was: " + out,
-                    !out.contains("are not a"));
+            assertFalse(message + "Program output should not contain \"are not an adult\", but it did. Output was: " + out, out.contains("are not a"));
         } else {
             assertTrue("Program output should contain \"are not an adult\", but it did not. Output was: " + out,
                     out.contains("are not a"));
-            assertTrue(message + "Program output should not contain \"are an adult\", but it did. Output was: " + out,
-                    !out.contains("are an a"));
+            assertFalse(message + "Program output should not contain \"are an adult\", but it did. Output was: " + out, out.contains("are an a"));
         }
     }
 }

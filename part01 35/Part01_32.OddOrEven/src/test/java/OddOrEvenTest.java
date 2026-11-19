@@ -13,7 +13,7 @@ public class OddOrEvenTest {
 
     @Rule
     public MockStdio io = new MockStdio();
-    private Random r = new Random();
+    private final Random r = new Random();
 
     @Test
     public void test() {
